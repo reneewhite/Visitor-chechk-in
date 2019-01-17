@@ -1,0 +1,75 @@
+<h1>Employee Registration</h1>
+
+<form [formGroup]="adminForm" (ngSubmit)="onSubmitAdminDetails(adminForm.value)">
+    <mat-form-field class="full-width">
+      <input matInput type="text" placeholder="Enter your name" formControlName="name" class="form-control" required>
+    </mat-form-field>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.name" >
+          <div class="error-message" *ngIf="adminForm.get('name').hasError(validation.type) && (adminForm.get('name').dirty || adminForm.get('name').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+    <mat-form-field class="full-width">
+        <input matInput type="text"  placeholder="Enter your surname" formControlName="surname" class="form-control" required>
+    </mat-form-field>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.surname" >
+          <div class="error-message" *ngIf="adminForm.get('surname').hasError(validation.type) && (adminForm.get('surname').dirty || adminForm.get('surname').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+      <mat-form-field class="full-width">
+          <input matInput type="text"  placeholder="Enter your email" formControlName="email" class="form-control" required>
+      </mat-form-field>
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.email" >
+            <div class="error-message" *ngIf="adminForm.get('email').hasError(validation.type) && (adminForm.get('email').dirty || adminForm.get('email').touched)">
+          {{ validation.message }}
+            </div>
+          </ng-container>
+      </div>
+      <br>
+      <mat-form-field class="full-width">
+          <input matInput type="text"  placeholder="Enter your password" formControlName="password" class="form-control" required>
+      </mat-form-field>
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password" >
+            <div class="error-message" *ngIf="adminForm.get('password').hasError(validation.type) && (adminForm.get('password').dirty || adminForm.get('password').touched)">
+          {{ validation.message }}
+            </div>
+          </ng-container>
+      </div>
+      <br>
+      <mat-form-field>
+          <mat-select placeholder="Select persona" formControlName="persona" disableRipple>
+            <mat-option value="employee">Employee</mat-option>
+            <mat-option value="receptionist">Receptionist</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.persona" >
+              <div class="error-message" *ngIf="adminForm.get('persona').hasError(validation.type) && (adminForm.get('persona').dirty || adminForm.get('persona').touched)">
+            {{ validation.message }}
+              </div>
+            </ng-container>
+        </div>
+        <br>
+        <mat-form-field class="full-width">
+            <input matInput type="text"  placeholder="Enter orgID" formControlName="orgID" class="form-control" required>
+        </mat-form-field>
+        <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.orgID" >
+              <div class="error-message" *ngIf="adminForm.get('orgID').hasError(validation.type) && (adminForm.get('orgID').dirty || adminForm.get('orgID').touched)">
+            {{ validation.message }}
+              </div>
+            </ng-container>
+        </div>
+        <br>
+	<button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="register()">Register</button>
+</form>
+

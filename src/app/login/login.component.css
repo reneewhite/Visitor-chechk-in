@@ -1,0 +1,36 @@
+.example-card{
+    background: url(../../assets/page.jpg);
+    margin-left: 40%;
+    margin-right: 40%;
+    height: 50%;
+    width: 19%;
+}
+.example-full-width{
+    width: 70%;
+}
+.mat-card-title{
+    margin-left:50%;
+    margin-right:50%;
+}
+h1{
+    padding: 50px;
+   margin: 0 auto;
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+   color: rgb(55, 71, 79);
+}
+
+form{
+   margin: 0 auto;
+   width: 500px;
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+}
+
+.submit-btn{
+width: 23%;
+}

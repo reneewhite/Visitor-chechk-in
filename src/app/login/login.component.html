@@ -1,0 +1,28 @@
+<h1>Visitor Check-In</h1>
+
+<form [formGroup]="userDetailsForm" (ngSubmit)="onSubmitUserDetails(userDetailsForm.value)">
+    <mat-form-field class="full-width">
+        <input matInput type="text"  placeholder="Username" formControlName="email" class="form-control" required>
+    </mat-form-field>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email" >
+          <div class="error-message" *ngIf="userDetailsForm.get('email').hasError(validation.type) && (userDetailsForm.get('email').dirty || userDetailsForm.get('email').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+    <mat-form-field class="full-width">
+        <input matInput type="password"  placeholder="Password"  [type]="hide ? 'password' : 'text'" formControlName="password" required>
+    </mat-form-field>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password" >
+          <div class="error-message" *ngIf="userDetailsForm.get('password').hasError(validation.type) && (userDetailsForm.get('password').dirty || userDetailsForm.get('password').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+	<button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!userDetailsForm.valid" (click)="login()">Login</button>
+</form>
+

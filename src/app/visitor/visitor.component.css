@@ -1,0 +1,23 @@
+
+h1{
+    padding: 50px;
+   margin: 0 auto;
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+   color: rgb(55, 71, 79);
+}
+
+form{
+   margin: 0 auto;
+   width: 500px;
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+}
+
+.submit-btn{
+width: 23%;
+}
