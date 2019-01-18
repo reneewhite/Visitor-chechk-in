@@ -13,10 +13,15 @@ export class AdminPageComponent implements OnInit {
 
   ngOnInit() {
   }
-vis(){
-  this.router.navigate(['visitor']);
+  addEmp(){
+  this.router.navigate(['addEmp']);
 }
-
+addCamp(){
+  this.router.navigate(['addCamp']);
+}
+addOrg(){
+  this.router.navigate(['addOrg']);
+}
 logout(){
   
 }

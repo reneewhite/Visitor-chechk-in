@@ -1,7 +1,5 @@
 <h1>Employee Registration</h1>
 
-<H2>Sign Up</H2>
-
 <form [formGroup]="adminForm" (ngSubmit)="onSubmitAdminDetails(adminForm.value)">
     <mat-form-field class="full-width">
       <input matInput type="text" placeholder="Enter your name" formControlName="name" class="form-control" required>
@@ -37,7 +35,7 @@
       </div>
       <br>
       <mat-form-field class="full-width">
-          <input matInput type="text"  placeholder="Enter your password" formControlName="password" class="form-control" #action required>
+          <input matInput type="text"  placeholder="Enter your password" formControlName="password" class="form-control" required>
       </mat-form-field>
       <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.password" >
@@ -61,23 +59,16 @@
             </ng-container>
         </div>
         <br>
-        <mat-form-field>
-            <mat-select placeholder="Select organisation" formControlName="orgID" disableRipple>
-              <mat-option value="mlab">Mlab</mat-option>
-              <mat-option value="sappi">Sappi</mat-option>
-              <mat-option value="coachlab">CoachLab</mat-option>
-              <mat-option value="dst">DST</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.orgID" >
-              <div class="error-message" *ngIf="adminForm.get('orgID').hasError(validation.type) && (adminForm.get('orgID').dirty || adminForm.get('orgID').touched)">
-            {{ validation.message }}
-              </div>
-            </ng-container>
-        </div>
+       
+  
         <br>
-  <button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="register(message)">Enter</button>
-
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Select Organisation">
+            <mat-option *ngFor="let org of orgs" [value]="org.value">
+              {{org.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      <br>
+	<button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="register(message)">Register</button>
 </form>
-

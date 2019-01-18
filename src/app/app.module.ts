@@ -16,22 +16,25 @@ import {
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
 } from '@angular/material';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-import { VisitorComponent } from './visitor/visitor.component';
 import {MatSelectModule} from '@angular/material/select';
 import {FormGroupDirective, NgForm} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { EmployeesComponent } from './employees/employees.component';
 import { ToastComponent } from './toast/toast.component';
-
+import {AddCampComponent} from './add-camp/add-camp.component';
+import {AddOrgComponent} from './add-org/add-org.component';
+import { AddEmpComponent } from './add-emp/add-emp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminPageComponent,
-    VisitorComponent,
     EmployeesComponent,
-    ToastComponent
+    ToastComponent,
+    AddCampComponent,
+    AddOrgComponent,
+    AddEmpComponent
   ],
   imports: [
     BrowserModule,
@@ -54,12 +57,7 @@ import { ToastComponent } from './toast/toast.component';
     MatSelectModule,
     AppRoutingModule,
     MatSnackBarModule,
-
-    
-  
-
     // RouterModule.forRoot(routes)
-    
   ],
   providers: [MatSnackBar],
   bootstrap: [AppComponent],

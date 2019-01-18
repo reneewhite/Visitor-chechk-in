@@ -3,13 +3,12 @@ import {FormControl, Validators, ReactiveFormsModule, FormBuilder, FormGroup} fr
 import {MatSelectModule} from '@angular/material/select';
 import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material';
-
 @Component({
-  selector: 'app-visitor',
-  templateUrl: './visitor.component.html',
-  styleUrls: ['./visitor.component.css']
+  selector: 'app-add-emp',
+  templateUrl: './add-emp.component.html',
+  styleUrls: ['./add-emp.component.css']
 })
-export class VisitorComponent implements OnInit {
+export class AddEmpComponent implements OnInit {
   adminForm: FormGroup;
  employee
  message: string
@@ -23,7 +22,6 @@ persona
 orgID
   constructor(private fb:FormBuilder,private router: Router , public snackBar: MatSnackBar) { 
 this.message = 'Successfully Added'
-
     this.adminForm = this.fb.group({
       name : new FormControl ('', [Validators.required]),
       surname:  new FormControl ('', [Validators.required ]),
@@ -40,26 +38,21 @@ this.message = 'Successfully Added'
       orgID:  new FormControl('', [Validators.required ]),
    });
   }
-
   ngOnInit() {
   }
-
   
-
-  register(){
+  onSubmitAdminDetails(register){
     this.name = (this.adminForm.value.name);
     this.surname = (this.adminForm.value.surname);
     this.email = (this.adminForm.value.email);
    this.password = (this.adminForm.value.password);
    this.persona = (this.adminForm.value.persona);
    this.orgID = (this.adminForm.value.orgID);
-
-    this.router.navigate(['login']);
+    this.router.navigate(['AdminPage']);
     this.snackBar.open(this.message, this.action, {
-      duration: 10,
+      duration: 500,
     });
   }
-
   validation_messages = {
     'name': [
       { type: 'required', message: 'name is required' },
@@ -89,5 +82,4 @@ this.message = 'Successfully Added'
     ]
    
     }
-
 }

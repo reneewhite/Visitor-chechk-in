@@ -1,0 +1,29 @@
+<h1>Campus Registration</h1>
+
+<form [formGroup]="adminForm" (ngSubmit)="onSubmitAdminDetails(adminForm.value)">
+    <mat-form-field class="full-width">
+      <input matInput type="text" placeholder="Enter Campus name" formControlName="name" class="form-control" required>
+    </mat-form-field>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.name" >
+          <div class="error-message" *ngIf="adminForm.get('name').hasError(validation.type) && (adminForm.get('name').dirty || adminForm.get('name').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+    <mat-form-field class="full-width">
+        <input matInput type="text"  placeholder="Enter Campus Location" formControlName="location" class="form-control" required>
+    </mat-form-field>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.location" >
+          <div class="error-message" *ngIf="adminForm.get('location').hasError(validation.type) && (adminForm.get('location').dirty || adminForm.get('location').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+     
+	<button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="register(message)">Register</button>
+</form>
+

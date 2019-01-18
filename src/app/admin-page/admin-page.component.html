@@ -16,13 +16,21 @@
            <mat-icon class="example-icon">dashboard</mat-icon>Visitor Check-In
            <br>
            <br>
-                <mat-icon class="example-icon">home</mat-icon>Employee Management
+                <mat-icon class="example-icon">person</mat-icon>Employee Management
+                <br>           
+                  <p (click) = "addEmp()" >Add Employee</p> 
                 <br>
+               <p>View Employees</p> 
+               <mat-icon class="example-icon">home</mat-icon>Campus Management
+                <br>           
+                  <p (click) = "addCamp()" >Add Campus</p> 
                 <br>
-                <mat-icon class="example-icon" (click)="vis()">add</mat-icon>Add Employee
+               <p>View Campuses</p> 
+               <mat-icon class="example-icon">home</mat-icon>Organisation Management
+                <br>           
+                  <p (click) = "addOrg()" >Add Organisation</p> 
                 <br>
-                <br>
-                <mat-icon class="example-icon" (click)="vis()">list</mat-icon>View Employees
+               <p>View Organisations</p> 
        
     </mat-drawer>
     
