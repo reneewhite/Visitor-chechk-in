@@ -16,4 +16,8 @@ export class AdminPageComponent implements OnInit {
 vis(){
   this.router.navigate(['visitor']);
 }
+
+logout(){
+  
+}
 }

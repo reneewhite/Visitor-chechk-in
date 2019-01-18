@@ -1,8 +1,10 @@
 <h1>Visitor Check-In</h1>
 
-<form [formGroup]="userDetailsForm" (ngSubmit)="onSubmitUserDetails(userDetailsForm.value)">
+<h2>Sign in</h2>
+
+<form [formGroup]="userDetailsForm" (ngSubmit)="onSubmitUserDetails()">
     <mat-form-field class="full-width">
-        <input matInput type="text"  placeholder="Username" formControlName="email" class="form-control" required>
+        <input matInput type="text"  placeholder="E-mail" formControlName="email" class="form-control" required>
     </mat-form-field>
     <div class="validation-errors">
         <ng-container *ngFor="let validation of validation_messages.email" >
@@ -23,6 +25,28 @@
         </ng-container>
     </div>
     <br>
-	<button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!userDetailsForm.valid" (click)="login()">Login</button>
+  <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!userDetailsForm.valid">Enter</button>
+  <br>
+  <div id="lol">
+        <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Hello, World!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                </div>
+              </ng-template>
+              
+              <button mat-button (click)="open(content)">Forgot Pasword?</button>
+  </div>
+  
+
+  
 </form>
 

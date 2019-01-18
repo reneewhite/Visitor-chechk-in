@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormControl, Validators, ReactiveFormsModule, FormBuilder, FormGroup} from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,8 +12,11 @@ export class LoginComponent implements OnInit {
   
   userDetailsForm: FormGroup;
   hide = true;
+
+  email
+  password
   constructor(private router: Router, private fb:FormBuilder) {
-    
+ 
     this.userDetailsForm = this.fb.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -30,11 +34,12 @@ export class LoginComponent implements OnInit {
   
   }
 
-  login(){
+  onSubmitUserDetails(){
       this.router.navigate(['AdminPage']);
+      this.email = this.userDetailsForm.value.email;
+      this.password = this.userDetailsForm.value.password;
     }
    
-  
 
     validation_messages = {
    

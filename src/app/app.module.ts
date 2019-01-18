@@ -9,6 +9,8 @@ import { FormsModule, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from '../app.routing.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatSnackBar} from '@angular/material';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
@@ -18,12 +20,18 @@ import { VisitorComponent } from './visitor/visitor.component';
 import {MatSelectModule} from '@angular/material/select';
 import {FormGroupDirective, NgForm} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { EmployeesComponent } from './employees/employees.component';
+import { ToastComponent } from './toast/toast.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminPageComponent,
-    VisitorComponent
+    VisitorComponent,
+    EmployeesComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +53,15 @@ import {ErrorStateMatcher} from '@angular/material/core';
     MatTreeModule,
     MatSelectModule,
     AppRoutingModule,
+    MatSnackBarModule,
+
+    
   
 
     // RouterModule.forRoot(routes)
     
   ],
-  providers: [],
+  providers: [MatSnackBar],
   bootstrap: [AppComponent],
 
 })

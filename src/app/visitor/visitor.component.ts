@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, ReactiveFormsModule, FormBuilder, FormGroup} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-visitor',
@@ -11,8 +12,18 @@ import {Router} from '@angular/router';
 export class VisitorComponent implements OnInit {
   adminForm: FormGroup;
  employee
+ message: string
+action: string
  receptionist
-  constructor(private fb:FormBuilder,private router: Router ) { 
+ name
+ surname
+email
+password
+persona
+orgID
+  constructor(private fb:FormBuilder,private router: Router , public snackBar: MatSnackBar) { 
+this.message = 'Successfully Added'
+
     this.adminForm = this.fb.group({
       name : new FormControl ('', [Validators.required]),
       surname:  new FormControl ('', [Validators.required ]),
@@ -33,9 +44,20 @@ export class VisitorComponent implements OnInit {
   ngOnInit() {
   }
 
-  register(){
-    this.router.navigate(['login']);
+  
 
+  register(){
+    this.name = (this.adminForm.value.name);
+    this.surname = (this.adminForm.value.surname);
+    this.email = (this.adminForm.value.email);
+   this.password = (this.adminForm.value.password);
+   this.persona = (this.adminForm.value.persona);
+   this.orgID = (this.adminForm.value.orgID);
+
+    this.router.navigate(['login']);
+    this.snackBar.open(this.message, this.action, {
+      duration: 10,
+    });
   }
 
   validation_messages = {

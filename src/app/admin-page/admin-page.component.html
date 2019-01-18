@@ -5,9 +5,9 @@
           <span>Dashboard</span>
           <span class="example-spacer"></span>
           <mat-icon class="example-icon">search</mat-icon>
-          <mat-icon class="example-icon">dashboard</mat-icon>
           <mat-icon class="example-icon">notifications</mat-icon>
           <mat-icon class="example-icon">person</mat-icon>
+          <mat-icon class="example-icon" (click)="logout()">logout</mat-icon>
         </mat-toolbar-row>
       </mat-toolbar>
 
@@ -18,9 +18,11 @@
            <br>
                 <mat-icon class="example-icon">home</mat-icon>Employee Management
                 <br>
-                <mat-icon class="example-icon" (click)="vis()">.</mat-icon>Add Employee
                 <br>
-                <mat-icon class="example-icon" (click)="vis()">.</mat-icon>View Employee
+                <mat-icon class="example-icon" (click)="vis()">add</mat-icon>Add Employee
+                <br>
+                <br>
+                <mat-icon class="example-icon" (click)="vis()">list</mat-icon>View Employees
        
     </mat-drawer>
     

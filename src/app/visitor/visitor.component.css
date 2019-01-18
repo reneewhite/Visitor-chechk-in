@@ -9,7 +9,19 @@ h1{
    color: rgb(55, 71, 79);
 }
 
+
+h2{
+  
+   margin: 0 auto;
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+   color: rgb(55, 71, 79);
+}
+
 form{
+    padding: 40px;
    margin: 0 auto;
    width: 500px;
    display:flex;
@@ -21,3 +33,4 @@ form{
 .submit-btn{
 width: 23%;
 }
+

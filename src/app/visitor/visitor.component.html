@@ -1,5 +1,7 @@
 <h1>Employee Registration</h1>
 
+<H2>Sign Up</H2>
+
 <form [formGroup]="adminForm" (ngSubmit)="onSubmitAdminDetails(adminForm.value)">
     <mat-form-field class="full-width">
       <input matInput type="text" placeholder="Enter your name" formControlName="name" class="form-control" required>
@@ -35,7 +37,7 @@
       </div>
       <br>
       <mat-form-field class="full-width">
-          <input matInput type="text"  placeholder="Enter your password" formControlName="password" class="form-control" required>
+          <input matInput type="text"  placeholder="Enter your password" formControlName="password" class="form-control" #action required>
       </mat-form-field>
       <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.password" >
@@ -59,8 +61,13 @@
             </ng-container>
         </div>
         <br>
-        <mat-form-field class="full-width">
-            <input matInput type="text"  placeholder="Enter orgID" formControlName="orgID" class="form-control" required>
+        <mat-form-field>
+            <mat-select placeholder="Select organisation" formControlName="orgID" disableRipple>
+              <mat-option value="mlab">Mlab</mat-option>
+              <mat-option value="sappi">Sappi</mat-option>
+              <mat-option value="coachlab">CoachLab</mat-option>
+              <mat-option value="dst">DST</mat-option>
+            </mat-select>
         </mat-form-field>
         <div class="validation-errors">
             <ng-container *ngFor="let validation of validation_messages.orgID" >
@@ -70,6 +77,7 @@
             </ng-container>
         </div>
         <br>
-	<button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="register()">Register</button>
+  <button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="register(message)">Enter</button>
+
 </form>
 
