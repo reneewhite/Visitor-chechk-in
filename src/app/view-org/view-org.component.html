@@ -1,3 +1,22 @@
-<p>
-  view-org works!
-</p>
+<mat-list *ngIf="counter === 0">
+  <mat-list-item *ngFor="let organisation of organisations | async" >
+    <h3 matLine (click)="clickedOrg(organisation)"> {{organisation.name}}</h3>
+    <p matLine>
+      <span></span>
+      <span class="demo-2"></span>
+    </p>
+  </mat-list-item>
+</mat-list>
+
+<div *ngIf="counter === 1">
+
+  <form >
+    <label for="fname"> Organisation</label>
+    <input type="text" id="fname" name="name" value="{{name}}" >
+
+    <label for="lname">Campus ID</label>
+    <input type="text" id="lname" name="campusId" value="{{campusId}}">
+
+    <input type="submit" value="Delete Organisation" (click)="delete()">
+  </form>
+</div>

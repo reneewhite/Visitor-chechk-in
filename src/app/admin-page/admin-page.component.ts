@@ -25,4 +25,14 @@ addOrg(){
 logout(){
   
 }
+viewOrg(){
+  this.router.navigate(['viewOrg']);
+}
+viewEmp(){
+  this.router.navigate(['viewEmp']);
+
+}
+viewCamp(){
+  this.router.navigate(['viewCamp']);
+}
 }

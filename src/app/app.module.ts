@@ -24,6 +24,14 @@ import { ToastComponent } from './toast/toast.component';
 import {AddCampComponent} from './add-camp/add-camp.component';
 import {AddOrgComponent} from './add-org/add-org.component';
 import { AddEmpComponent } from './add-emp/add-emp.component';
+import {ViewOrgComponent} from './view-org/view-org.component';
+import { ViewEmpComponent } from './view-emp/view-emp.component';
+import { ViewCampComponent } from './view-camp/view-camp.component';
+import {MatListModule} from '@angular/material/list';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { UserService } from './services/user-service';
 
 @NgModule({
   declarations: [
@@ -34,9 +42,14 @@ import { AddEmpComponent } from './add-emp/add-emp.component';
     ToastComponent,
     AddCampComponent,
     AddOrgComponent,
-    AddEmpComponent
+    AddEmpComponent,
+    ViewOrgComponent,
+    ViewEmpComponent,
+    ViewCampComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
@@ -57,9 +70,12 @@ import { AddEmpComponent } from './add-emp/add-emp.component';
     MatSelectModule,
     AppRoutingModule,
     MatSnackBarModule,
+    MatListModule,
     // RouterModule.forRoot(routes)
   ],
-  providers: [MatSnackBar],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent],
 
 })

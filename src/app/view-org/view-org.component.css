@@ -1,0 +1,13 @@
+#search input[type=search].filled
+{
+ 
+  padding-left: 32px;
+  color: #4a83c0;
+  background-color: #fff;
+  cursor: auto;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}

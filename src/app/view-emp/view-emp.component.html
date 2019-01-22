@@ -1,0 +1,31 @@
+<mat-list *ngIf="counter === 0">
+  <mat-list-item *ngFor="let employee of employees | async" >
+    <h3 matLine (click)="clickedUser(employee)"> {{employee.firstname}}</h3>
+    <p matLine>
+      <span></span>
+      <span class="demo-2"></span>
+    </p>
+  </mat-list-item>
+</mat-list>
+
+<div *ngIf="counter === 1">
+
+  <form >
+    <label for="fname"> Email</label>
+    <input type="text" id="fname" name="firstname" value="{{email}}" >
+
+    <label for="lname">First Name</label>
+    <input type="text" id="lname" name="lastname" value="{{firstname}}">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" value="{{lastname}}" >
+
+    <label for="lname">Persona</label>
+    <input type="text" id="lname" name="lastname" value="{{persona}}">
+
+    <label for="lname">Organisation</label>
+    <input type="text" id="lname" name="lastname" value="{{organizationId}}" >
+
+    <input type="submit" value="Delete User" (click)="delete()">
+  </form>
+</div>
