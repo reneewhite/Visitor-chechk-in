@@ -1,0 +1,45 @@
+table{
+    width: 80%;
+    margin: 45px auto;
+    border: none; 
+}
+
+tr:nth-child(even){
+    background: rgb(200, 217, 240);
+}
+
+tr .btn{
+    width: 100px;
+    padding: 5px 0;
+}
+.btn button{
+    width: 50px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#delete{
+    color : #222226;
+}
+
+#edit{
+    color : #0153b3;
+}
+
+thead{
+    height: 60px;
+
+}
+
+td{
+    padding: 0 5px;
+}
+th{
+    text-align: left;
+    background: #506093;
+    padding: 10px 5px;
+    color: aliceblue; 
+}
+
+

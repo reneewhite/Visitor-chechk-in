@@ -1,12 +1,30 @@
-<mat-list *ngIf="counter === 0">
+<!-- <mat-list *ngIf="counter === 0">
   <mat-list-item *ngFor="let employee of employees | async" >
     <h3 matLine (click)="clickedUser(employee)"> {{employee.firstname}}</h3>
     <p matLine>
+        <button mat-raised-button color="primary" ><mat-icon>delete</mat-icon></button>
+        <button mat-raised-button ><mat-icon>edit</mat-icon></button>
       <span></span>
       <span class="demo-2"></span>
     </p>
   </mat-list-item>
-</mat-list>
+  
+</mat-list> -->
+<table cellspacing="0">
+  <thead>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Options</th>
+  </thead>
+  <tr  *ngFor="let employee of employees | async">
+    <td>{{employee.firstname}}</td>
+    <td>{{employee.lastname}}</td>
+    <td class = "btn">
+      <button><mat-icon id = "delete">delete</mat-icon></button>
+      <button><mat-icon id = "edit">edit</mat-icon></button>
+    </td>
+  </tr>
+</table>
 
 <div *ngIf="counter === 1">
 
